@@ -44,16 +44,36 @@ var oldestCustomer = function(array){
     //reduce method
     let oldest = _.reduce(array, function(accumulator, current){
         //determine if current customer is older than accumulator
+        if (current.age > accumulator.age){
             //return current
-        //else
+            return current;
+        //else  
+        } else {
             //return accumulator
+            return accumulator;
+        }
 
     });
+    return oldest.age;
 };
 
-var youngestCustomer;
+var youngestCustomer = function(array) {
+    let youngest = _.reduce(array, function(accumulator, current){
+    //determine if current customer is younger than accumulator
+    if (current.age < accumulator.age){
+        return current;
+    } else {
+        return accumulator;
+    }
+});
+    return youngest;
+};
 
+//var balance = "$3,868.37";
+//var replaced = balance.replaceAll(/[$,]/g, "");
+//console.log(replaced);
 var averageBalance ;
+
 
 var firstLetterCount;
 
