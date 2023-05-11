@@ -16,20 +16,44 @@ var _ = require('underbar');
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER>
+ *    npm start --prefix ./lgf-test
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
-var maleCount;
+//map, filter, reduce, each
 
-var femaleCount;
+var maleCount = function (array){
+    let males = _.filter(array, function(customer){
+        return customer.gender === 'male';
+    });
+    return males.length;
+};
 
-var oldestCustomer;
+var femaleCount = function(array){
+    let females = _.reduce(array, function(accumulator, current) {
+        if (current.gender === 'female') {
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+    return females;
+};
+
+var oldestCustomer = function(array){
+    //reduce method
+    let oldest = _.reduce(array, function(accumulator, current){
+        //determine if current customer is older than accumulator
+            //return current
+        //else
+            //return accumulator
+
+    });
+};
 
 var youngestCustomer;
 
-var averageBalance;
+var averageBalance ;
 
 var firstLetterCount;
 
